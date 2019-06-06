@@ -1,11 +1,12 @@
-version: '3'
+version: '2'
 
 services:
 
   scpsl:
     container_name: scpsl
     build: ./scpsl
-    restart: unless-stopped
+    mem_limit: 1G
+    restart: on-failure
     ports:
       - "7777-7784:7777-7784/udp"
       - "7777-7784:7777-7784"
@@ -13,3 +14,33 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - ${MOUNT_POINT}/scpsl/steamcmd:/home/steam/steamcmd
       - ${MOUNT_POINT}/scpsl/scp_server:/home/steam/scp_server
+
+  creative:
+    container_name: creative
+    image: nagency/papermc
+    mem_limit: 1G
+    restart: on-failure
+    ports:
+      - "25565:25566"
+    volumes:
+      - ${MOUNT_POINT}/minecraft/creative:/paper/server
+
+  survival:
+    container_name: survival
+    image: nagency/papermc
+    mem_limit: 1G
+    restart: on-failure
+    ports:
+      - "25565:25567"
+    volumes:
+      - ${MOUNT_POINT}/minecraft/survival:/paper/server
+
+  waterfall:
+    container_name: waterfall
+    image: nagency/waterfall
+    mem_limit: 1G
+    restart: on-failure
+    ports:
+      - "25577:25565"
+    volumes:
+      - ${MOUNT_POINT}/minecraft/waterfall:/waterfall/proxy
