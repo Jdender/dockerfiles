@@ -1,5 +1,5 @@
 #Server main settings
-server_name: Sancuary of a Wandering Cat -- discord.gg/YgjFd9u
+server_name: Sancuary of a Wandering Cat (More Like Chaos)
 #default - uses server_name
 player_list_title: default
 serverinfo_pastebin_id: 7wV681fT
