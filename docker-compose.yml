@@ -21,7 +21,7 @@ services:
     mem_limit: 1G
     restart: on-failure
     ports:
-      - "25565:25566"
+      - "25566:25565"
     volumes:
       - ${MOUNT_POINT}/minecraft/creative:/paper/server
 
@@ -31,7 +31,7 @@ services:
     mem_limit: 1G
     restart: on-failure
     ports:
-      - "25565:25567"
+      - "25567:25565"
     volumes:
       - ${MOUNT_POINT}/minecraft/survival:/paper/server
 
@@ -41,6 +41,6 @@ services:
     mem_limit: 1G
     restart: on-failure
     ports:
-      - "25577:25565"
+      - "25565:25577"
     volumes:
       - ${MOUNT_POINT}/minecraft/waterfall:/waterfall/proxy
