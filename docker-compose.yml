@@ -6,6 +6,7 @@ services:
     container_name: scpsl
     build: ./scpsl
     mem_limit: 1G
+    memswap_limit: 4G
     restart: on-failure
     ports:
       - "7777-7784:7777-7784/udp"
@@ -19,6 +20,7 @@ services:
     container_name: creative
     image: nagency/papermc
     mem_limit: 1G
+    memswap_limit: 4G
     restart: on-failure
     ports:
       - "25566:25565"
@@ -29,6 +31,7 @@ services:
     container_name: survival
     image: nagency/papermc
     mem_limit: 1G
+    memswap_limit: 4G
     restart: on-failure
     ports:
       - "25567:25565"
@@ -39,6 +42,7 @@ services:
     container_name: waterfall
     image: nagency/waterfall
     mem_limit: 1G
+    memswap_limit: 4G
     restart: on-failure
     ports:
       - "25565:25577"
